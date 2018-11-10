@@ -3,15 +3,18 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // soporte para bodies codificados en jsonsupport
 app.use(bodyParser.urlencoded({ extended: true })); // soporte para bodies codificados
- 
+app.use(methodOverride()); 
+
 var cilinder = 'c';
 var piramide = 'p';
 var heart = 'h';
 var cube = 'u';
 var text = ""; 
+
+var router = express.Router();
  
 //Ejemplo: GET http://localhost:8080/items/10
-app.get('/Android/Piramide', function(req, res) {
+router.get('/Android/Piramide', function(req, res) {
   piramide = 'P';
   res.send('Piramide Android');
 });
@@ -51,6 +54,8 @@ app.get('/Arduino/Cube', function(req, res, next){
 	cube = 'u';
 });*/
   
+app.use(router);
+
 var server = app.listen(8080, function () {
     console.log('Server is running..'); 
 });
