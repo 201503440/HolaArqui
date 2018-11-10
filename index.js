@@ -16,7 +16,7 @@ app.get('/Android/Piramide', function(req, res) {
   res.send('Piramide Android');
 });
 
-app.get('/Arduino/Piramide', function(req, res, next){
+/*app.get('/Arduino/Piramide', function(req, res, next){
 	res.send(piramide);
 	piramide = 'p';
 });
@@ -49,7 +49,7 @@ app.get('/Android/Cube', function(req, res, next) {
 app.get('/Arduino/Cube', function(req, res, next){
 	res.send(cube);
 	cube = 'u';
-});
+});*/
   
 var server = app.listen(8080, function () {
     console.log('Server is running..'); 
